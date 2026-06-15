@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Minecraft Builds</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
+            background: url("wallpaper.png") center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+        }
+
+        /* Dark overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: -1;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(15, 15, 15, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        header h1 {
+            font-size: 4rem;
+            color: #57ff8a;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #d0d0d0;
+            font-size: 1.2rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            padding: 40px;
+            max-width: 1600px;
+            margin: auto;
+        }
+
+        .build {
+            background: rgba(25, 25, 25, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 18px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+        }
+
+        .build:hover {
+            transform: translateY(-8px);
+            border-color: rgba(87, 255, 138, 0.5);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+        }
+
+        .build img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .build-info {
+            padding: 20px;
+        }
+
+        .build-info h2 {
+            color: #57ff8a;
+            margin-bottom: 10px;
+        }
+
+        .build-info p {
+            color: #d0d0d0;
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: rgba(10, 10, 10, 0.9);
+            color: #999;
+            margin-top: 30px;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            inset: 0;
+            background: rgba(0,0,0,0.95);
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            font-size: 50px;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.8rem;
+            }
+
+            .gallery {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>My Minecraft Builds</h1>
+    <p>A showcase of my best Minecraft creations</p>
+</header>
+
+<section class="gallery">
+
+    <div class="build">
+        <img src="images/castle.jpg" alt="Castle" onclick="openImage(this.src)">
+        <div class="build-info">
+            <h2>Medieval Castle</h2>
+            <p>A massive castle featuring towers, walls, and a detailed interior.</p>
+        </div>
+    </div>
+
+    <div class="build">
+        <img src="images/city.jpg" alt="City" onclick="openImage(this.src)">
+        <div class="build-info">
+            <h2>Modern City</h2>
+            <p>A growing metropolis filled with skyscrapers and infrastructure.</p>
+        </div>
+    </div>
+
+    <div class="build">
+        <img src="images/base.jpg" alt="Base" onclick="openImage(this.src)">
+        <div class="build-info">
+            <h2>Survival Base</h2>
+            <p>My main survival headquarters with storage and farms.</p>
+        </div>
+    </div>
+
+    <div class="build">
+        <img src="images/farm.jpg" alt="Farm" onclick="openImage(this.src)">
+        <div class="build-info">
+            <h2>Automatic Farm</h2>
+            <p>A fully automated redstone-powered farming system.</p>
+        </div>
+    </div>
+
+    <div class="build">
+        <img src="images/nation.jpg" alt="Nation" onclick="openImage(this.src)">
+        <div class="build-info">
+            <h2>MinecraftCorporations</h2>
+            <p>The capital city of my Minecraft nation.</p>
+        </div>
+    </div>
+
+    <div class="build">
+        <img src="images/megabuild.jpg" alt="Mega Build" onclick="openImage(this.src)">
+        <div class="build-info">
+            <h2>Mega Project</h2>
+            <p>One of my largest and most ambitious Minecraft creations.</p>
+        </div>
+    </div>
+
+</section>
+
+<footer>
+    <p>Created by Bharath • Minecraft Portfolio</p>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeImage()">
+    <span class="close">&times;</span>
+    <img id="lightbox-img" src="">
+</div>
+
+<script>
+    function openImage(src) {
+        document.getElementById("lightbox").style.display = "flex";
+        document.getElementById("lightbox-img").src = src;
+    }
+
+    function closeImage() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
