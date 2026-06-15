@@ -1,155 +1,346 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Minecraft Builds</title>
+
+```
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        color: white;
+        min-height: 100vh;
+        background: url("wallpaper.jpg") center center fixed;
+        background-size: cover;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: -1;
+    }
+
+    header {
+        text-align: center;
+        padding: 70px 20px;
+        background: rgba(15, 15, 15, 0.45);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    header h1 {
+        font-size: 4rem;
+        color: #8B0000;
+        margin-bottom: 15px;
+        text-shadow: 0 0 15px rgba(0,0,0,0.8);
+    }
+
+    header p {
+        color: #e0e0e0;
+        font-size: 1.2rem;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 25px;
+        padding: 40px;
+        max-width: 1700px;
+        margin: auto;
+    }
+
+    .build {
+        background: rgba(25, 25, 25, 0.45);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 18px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+    }
+
+    .build:hover {
+        transform: translateY(-8px);
+        border-color: rgba(139, 0, 0, 0.6);
+        box-shadow: 0 15px 40px rgba(139, 0, 0, 0.35);
+    }
+
+    .build img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        display: block;
+        cursor: pointer;
+    }
+
+    .build-info {
+        padding: 20px;
+    }
+
+    .build-info h2 {
+        color: #8B0000;
+        margin-bottom: 10px;
+        font-size: 1.5rem;
+    }
+
+    .build-info p {
+        color: #d8d8d8;
+        line-height: 1.6;
+    }
+
+    footer {
+        text-align: center;
+        padding: 25px;
+        background: rgba(15, 15, 15, 0.45);
+        backdrop-filter: blur(12px);
+        color: #ccc;
+        margin-top: 30px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .lightbox {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.95);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+
+    .lightbox img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 12px;
+    }
+
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 30px;
+        font-size: 50px;
+        color: white;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    @media (max-width: 768px) {
+        header h1 {
+            font-size: 2.8rem;
+        }
+
+        .gallery {
+            padding: 20px;
+        }
+    }
+</style>
+```
+
+</head>
+<body>
+
+<header>
+    <h1>Bharath's Minecraft Builds</h1>
+    <p>A showcase of my Minecraft creations and projects</p>
+</header>
+
 <section class="gallery">
 
-    <div class="build">
-        <img src="images/mansion1.png" alt="Mansion 1" onclick="openImage(this.src)">
-        <div class="build-info">
-            <h2>Mansion</h2>
-            <p>A large custom-built mansion featuring detailed architecture.</p>
-        </div>
+```
+<div class="build">
+    <img src="images/mansion1.png" alt="Mansion 1" onclick="openImage(this.src)">
+    <div class="build-info">
+        <h2>Mansion</h2>
+        <p>A large custom-built mansion featuring detailed architecture.</p>
     </div>
+</div>
 
-    <div class="build">
-        <img src="images/mansion2.png" alt="Mansion 2" onclick="openImage(this.src)">
-        <div class="build-info">
-            <h2>Mansion Interior</h2>
-            <p>Another view of the mansion and its surrounding landscape.</p>
-        </div>
+<div class="build">
+    <img src="images/mansion2.png" alt="Mansion 2" onclick="openImage(this.src)">
+    <div class="build-info">
+        <h2>Mansion Interior</h2>
+        <p>Another view of the mansion and its surroundings.</p>
     </div>
+</div>
 
-    <div class="build">
-        <img src="images/mansion3.png" alt="Mansion 3" onclick="openImage(this.src)">
-        <div class="build-info">
-            <h2>Mansion Expansion</h2>
-            <p>An updated version showcasing additional details and improvements.</p>
-        </div>
+<div class="build">
+    <img src="images/mansion3.png" alt="Mansion 3" onclick="openImage(this.src)">
+    <div class="build-info">
+        <h2>Mansion Expansion</h2>
+        <p>An upgraded version with additional details and improvements.</p>
     </div>
+</div>
 
-    <div class="build">
-        <img src="images/house1.png" alt="House 1" onclick="openImage(this.src)">
-        <div class="build-info">
-            <h2>Survival House</h2>
-            <p>A practical and stylish home built for survival gameplay.</p>
-        </div>
+<div class="build">
+    <img src="images/house1.png" alt="House 1" onclick="openImage(this.src)">
+    <div class="build-info">
+        <h2>Survival House</h2>
+        <p>A practical and stylish survival home.</p>
     </div>
+</div>
 
-    <div class="build">
-        <img src="images/house2.png" alt="House 2" onclick="openImage(this.src)">
-        <div class="build-info">
-            <h2>Village House</h2>
-            <p>A smaller build inspired by Minecraft village architecture.</p>
-        </div>
+<div class="build">
+    <img src="images/house2.png" alt="House 2" onclick="openImage(this.src)">
+    <div class="build-info">
+        <h2>Village House</h2>
+        <p>A build inspired by traditional Minecraft villages.</p>
     </div>
+</div>
 
-    <div class="build">
-        <img src="images/house3.png" alt="House 3" onclick="openImage(this.src)">
-        <div class="build-info">
-            <h2>Modern Home</h2>
-            <p>A clean and contemporary residential build.</p>
-        </div>
+<div class="build">
+    <img src="images/house3.png" alt="House 3" onclick="openImage(this.src)">
+    <div class="build-info">
+        <h2>Modern Home</h2>
+        <p>A sleek and contemporary residential build.</p>
     </div>
+</div>
 
-    <div class="build">
-        <img src="images/house4.png" alt="House 4" onclick="openImage(this.src)">
-        <div class="build-info">
-            <h2>Custom Residence</h2>
-            <p>A detailed house designed with unique materials and layout.</p>
-        </div>
+<div class="build">
+    <img src="images/house4.png" alt="House 4" onclick="openImage(this.src)">
+    <div class="build-info">
+        <h2>Custom Residence</h2>
+        <p>A unique home with custom detailing.</p>
     </div>
+</div>
 
-    <div class="build">
-        <img src="images/house5.png" alt="House 5" onclick="openImage(this.src)">
-        <div class="build-info">
-            <h2>Luxury House</h2>
-            <p>A larger residential build with decorative landscaping.</p>
-        </div>
+<div class="build">
+    <img src="images/house5.png" alt="House 5" onclick="openImage(this.src)">
+    <div class="build-info">
+        <h2>Luxury House</h2>
+        <p>A larger residence with landscaping and decoration.</p>
     </div>
+</div>
 
-    <div class="build">
-        <img src="images/autofarm1.png" alt="Auto Farm 1" onclick="openImage(this.src)">
-        <div class="build-info">
-            <h2>Automatic Farm</h2>
-            <p>An automated farming system designed for efficiency.</p>
-        </div>
+<div class="build">
+    <img src="images/autofarm1.png" alt="Auto Farm 1" onclick="openImage(this.src)">
+    <div class="build-info">
+        <h2>Automatic Farm</h2>
+        <p>An efficient automated farming system.</p>
     </div>
+</div>
 
-    <div class="build">
-        <img src="images/autofarm2.png" alt="Auto Farm 2" onclick="openImage(this.src)">
-        <div class="build-info">
-            <h2>Farm Expansion</h2>
-            <p>An upgraded version of the automated farming setup.</p>
-        </div>
+<div class="build">
+    <img src="images/autofarm2.png" alt="Auto Farm 2" onclick="openImage(this.src)">
+    <div class="build-info">
+        <h2>Farm Expansion</h2>
+        <p>An upgraded and expanded farming setup.</p>
     </div>
+</div>
 
-    <div class="build">
-        <img src="images/brewery1.png" alt="Brewery" onclick="openImage(this.src)">
-        <div class="build-info">
-            <h2>Brewery</h2>
-            <p>A custom brewery build featuring detailed interior design.</p>
-        </div>
+<div class="build">
+    <img src="images/brewery1.png" alt="Brewery" onclick="openImage(this.src)">
+    <div class="build-info">
+        <h2>Brewery</h2>
+        <p>A detailed brewery build with a custom design.</p>
     </div>
+</div>
 
-    <div class="build">
-        <img src="images/greenhouse1.png" alt="Greenhouse" onclick="openImage(this.src)">
-        <div class="build-info">
-            <h2>Greenhouse</h2>
-            <p>A glass greenhouse built to showcase crops and plants.</p>
-        </div>
+<div class="build">
+    <img src="images/greenhouse1.png" alt="Greenhouse" onclick="openImage(this.src)">
+    <div class="build-info">
+        <h2>Greenhouse</h2>
+        <p>A glass structure dedicated to farming and decoration.</p>
     </div>
+</div>
 
-    <div class="build">
-        <img src="images/netherportal1.png" alt="Nether Portal 1" onclick="openImage(this.src)">
-        <div class="build-info">
-            <h2>Nether Portal Hub</h2>
-            <p>A custom portal structure connecting worlds in style.</p>
-        </div>
+<div class="build">
+    <img src="images/netherportal1.png" alt="Nether Portal 1" onclick="openImage(this.src)">
+    <div class="build-info">
+        <h2>Nether Portal Hub</h2>
+        <p>A decorative portal entrance connecting worlds.</p>
     </div>
+</div>
 
-    <div class="build">
-        <img src="images/netherportal2.png" alt="Nether Portal 2" onclick="openImage(this.src)">
-        <div class="build-info">
-            <h2>Portal Expansion</h2>
-            <p>An enhanced version with additional decorative elements.</p>
-        </div>
+<div class="build">
+    <img src="images/netherportal2.png" alt="Nether Portal 2" onclick="openImage(this.src)">
+    <div class="build-info">
+        <h2>Portal Expansion</h2>
+        <p>An upgraded version with additional styling.</p>
     </div>
+</div>
 
-    <div class="build">
-        <img src="images/pixelart1.png" alt="Pixel Art 1" onclick="openImage(this.src)">
-        <div class="build-info">
-            <h2>Pixel Art</h2>
-            <p>A large-scale artwork created entirely with Minecraft blocks.</p>
-        </div>
+<div class="build">
+    <img src="images/pixelart1.png" alt="Pixel Art 1" onclick="openImage(this.src)">
+    <div class="build-info">
+        <h2>Pixel Art</h2>
+        <p>Creative artwork made entirely from Minecraft blocks.</p>
     </div>
+</div>
 
-    <div class="build">
-        <img src="images/pixelart2.png" alt="Pixel Art 2" onclick="openImage(this.src)">
-        <div class="build-info">
-            <h2>Pixel Art Collection</h2>
-            <p>Another creative pixel-art project showcasing block artistry.</p>
-        </div>
+<div class="build">
+    <img src="images/pixelart2.png" alt="Pixel Art 2" onclick="openImage(this.src)">
+    <div class="build-info">
+        <h2>Pixel Art Collection</h2>
+        <p>Another large-scale pixel art creation.</p>
     </div>
+</div>
 
-    <div class="build">
-        <img src="images/shop1.png" alt="Shop" onclick="openImage(this.src)">
-        <div class="build-info">
-            <h2>Trading Shop</h2>
-            <p>A community shop designed for commerce and player interaction.</p>
-        </div>
+<div class="build">
+    <img src="images/shop1.png" alt="Shop" onclick="openImage(this.src)">
+    <div class="build-info">
+        <h2>Trading Shop</h2>
+        <p>A shop designed for commerce and player interaction.</p>
     </div>
+</div>
 
-    <div class="build">
-        <img src="images/skyblock1.png" alt="Skyblock" onclick="openImage(this.src)">
-        <div class="build-info">
-            <h2>Skyblock Base</h2>
-            <p>A resource-efficient base built in a Skyblock environment.</p>
-        </div>
+<div class="build">
+    <img src="images/skyblock1.png" alt="Skyblock" onclick="openImage(this.src)">
+    <div class="build-info">
+        <h2>Skyblock Base</h2>
+        <p>A functional base built in a Skyblock world.</p>
     </div>
+</div>
 
-    <div class="build">
-        <img src="images/vault1.png" alt="Vault" onclick="openImage(this.src)">
-        <div class="build-info">
-            <h2>Vault</h2>
-            <p>A secure storage facility designed to protect valuable resources.</p>
-        </div>
+<div class="build">
+    <img src="images/vault1.png" alt="Vault" onclick="openImage(this.src)">
+    <div class="build-info">
+        <h2>Vault</h2>
+        <p>A secure storage facility for valuable resources.</p>
     </div>
+</div>
+```
 
 </section>
+
+<footer>
+    <p>Created by Bharath • Minecraft Portfolio</p>
+</footer>
+
+<div class="lightbox" id="lightbox" onclick="closeImage()">
+    <span class="close">&times;</span>
+    <img id="lightbox-img" src="" alt="Expanded Image">
+</div>
+
+<script>
+    function openImage(src) {
+        document.getElementById("lightbox").style.display = "flex";
+        document.getElementById("lightbox-img").src = src;
+    }
+
+    function closeImage() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            closeImage();
+        }
+    });
+</script>
+
+</body>
+</html>
